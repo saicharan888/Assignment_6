@@ -6,7 +6,7 @@ function format(num) {
 }
 
 function unformat(str) {
-  const val = parseInt(str, 10);
+  const val = parseFloat(str, 10);
   return Number.isNaN(val) ? null : val;
 }
 
@@ -19,7 +19,7 @@ export default class NumberInput extends React.Component {
   }
 
   onChange(e) {
-    if (e.target.value.match(/^\d*$/)) {
+    if (e.target.value.match(/^\d*\.?\d*$/)) {
       this.setState({ value: e.target.value });
     }
   }
